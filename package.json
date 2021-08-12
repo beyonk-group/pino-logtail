@@ -1,0 +1,46 @@
+{
+  "name": "@beyonk/pino-logtail",
+  "version": "0.0.0",
+  "description": "Logtail integration for Pino Logger",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha *.spec.js --token foo",
+    "demo": "node demo.js | node index.js",
+    "lint": "eslint ."
+  },
+  "bin": {
+    "pino-logtail": "index.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@logtail/node": "^0.1.10",
+    "minimist": "^1.2.5",
+    "pump": "^3.0.0",
+    "split2": "^3.2.2",
+    "through2": "^4.0.2"
+  },
+  "peerDependencies": {
+    "pino": "^6.11.3"
+  },
+  "devDependencies": {
+    "@beyonk/eslint-config": "^5.0.2",
+    "@hapi/code": "^8.0.3",
+    "eslint": "^7.19.0",
+    "mocha": "^9.0.3",
+    "pino": "*"
+  },
+  "eslintConfig": {
+    "extends": "@beyonk",
+    "globals": {
+      "describe": true,
+      "context": true,
+      "beforeEach": true,
+      "afterEach": true,
+      "it": true
+    }
+  },
+  "volta": {
+    "node": "16.6.2"
+  }
+}
