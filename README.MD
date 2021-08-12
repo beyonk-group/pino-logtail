@@ -1,7 +1,7 @@
-# @beyonk/pino-sematext
+# @beyonk/pino-logtail
 
-*@beyonk/pino-sematext* is a so called "transport" for the [pino](https://github.com/pinojs/pino) logger. *pino-syslog* receives *pino* logs from `stdin` and 
-sends them to a logsene compatible logger such as [sematext](https://logtail.com) via `@logtail/node`.
+*@beyonk/pino-logtail* is a so called "transport" for the [pino](https://github.com/pinojs/pino) logger. *pino-logtail* receives *pino* logs from `stdin` and 
+sends them to a logsene compatible logger such as [logtail](https://logtail.com) via `@logtail/node`.
 
 For example:
 
