@@ -28,7 +28,8 @@
     "@hapi/code": "^8.0.3",
     "eslint": "^7.19.0",
     "mocha": "^9.0.3",
-    "pino": "*"
+    "pino": "*",
+    "sinon": "^11.1.2"
   },
   "eslintConfig": {
     "extends": "@beyonk",

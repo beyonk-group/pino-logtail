@@ -35,7 +35,14 @@ describe('transform', () => {
     it('has passed correct arguments to logger', () => {
       expect(
         logger.log.firstCall.args
-      ).to.equal([ 'info', 'foo', { bar: 'baz', hostname: 'localhost', pid: 0 } ])
+      ).to.equal(
+        [
+          'foo',
+          'info',
+          { bar: 'baz' },
+          { system: { hostname: 'localhost', pid: 0 } }
+        ]
+      )
     })
   })
 })
