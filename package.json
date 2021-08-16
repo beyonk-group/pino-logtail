@@ -1,6 +1,6 @@
 {
   "name": "@beyonk/pino-logtail",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Logtail integration for Pino Logger",
   "main": "index.js",
   "scripts": {
