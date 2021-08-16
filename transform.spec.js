@@ -8,7 +8,21 @@ const { expect } = require('@hapi/code')
 describe('transform', () => {
   describe('#handleLog()', () => {
     const time = new Date().getTime()
-    const msg = { level: 5, time, pid: 0, hostname: 'localhost', msg: 'foo', bar: 'baz' }
+    const msg = {
+      level: 5,
+      time,
+      pid: 0,
+      hostname: 'localhost',
+      msg: 'foo',
+      bar: 'baz',
+      context: {
+        runtime: {
+          file: 'foo.js',
+          method: 'bar()'
+        }
+      }
+    }
+
     const cb = stub()
 
     beforeEach(() => {
@@ -39,8 +53,19 @@ describe('transform', () => {
         [
           'foo',
           'info',
-          { bar: 'baz' },
-          { system: { hostname: 'localhost', pid: 0 } }
+          {
+            bar: 'baz',
+            context: {
+              system: {
+                hostname: 'localhost',
+                pid: 0
+              },
+              runtime: {
+                file: 'foo.js',
+                method: 'bar()'
+              }
+            }
+          }
         ]
       )
     })

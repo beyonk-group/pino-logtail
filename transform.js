@@ -14,7 +14,7 @@ function safeParse (src) {
 
 function handleLog (log, cb) {
   const { level, time, pid, hostname, msg = '', context = {}, ...params } = log
-  logger.log(msg, levels[level] || 'info', { ...params }, { system: { pid, hostname }, ...context })
+  logger.log(msg, levels[level] || 'info', { ...params, context: { system: { pid, hostname }, ...context } })
   cb()
 }
 
