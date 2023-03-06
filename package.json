@@ -21,7 +21,7 @@
     "through2": "^4.0.2"
   },
   "peerDependencies": {
-    "pino": "^6.11.3"
+    "pino": ">= 6 < 9"
   },
   "devDependencies": {
     "@beyonk/eslint-config": "^5.0.2",
