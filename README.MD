@@ -1,5 +1,7 @@
 # @beyonk/pino-logtail
 
+![Corepack](https://img.shields.io/badge/corepack-enabled-orange)
+
 *@beyonk/pino-logtail* is a so called "transport" for the [pino](https://github.com/pinojs/pino) logger. *pino-logtail* receives *pino* logs from `stdin` and 
 sends them to a logsene compatible logger such as [logtail](https://logtail.com) via `@logtail/node`.
 
@@ -14,7 +16,7 @@ $ node your-app.js | pino-logtail --token my-api-token
 You can test the integration by running the demo:
 
 ```
-$ npm run demo -- --token <my-api-token>
+$ pnpm demo -- --token <my-api-token>
 ```
 
 ## Install
