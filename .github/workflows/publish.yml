@@ -1,6 +1,11 @@
 name: publish
 
 on:
+  push:
+    tags:
+      - 'v*'
+    branches:
+      - '*'
   pull_request:
     branches:
       - '*'
@@ -9,7 +14,24 @@ env:
   NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: set up node and pnpm
+        run: |
+          corepack enable
+          pnpm i
+
+      - name: test
+        run: pnpm test
+
   publish-npm:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs:
+      - test
     runs-on: ubuntu-latest
     steps:
       - name: checkout
